@@ -1,4 +1,4 @@
-from stack import Empty, ArrayStack
+from stack import Empty, ArrayStack, LinkedStack
 
 if __name__=="__main__":
     S=ArrayStack()
