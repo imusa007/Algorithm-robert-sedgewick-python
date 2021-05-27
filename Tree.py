@@ -53,5 +53,24 @@ class Tree:
             """return true if tree is empty"""
             return len(self) == 0
 
+        def depth(self,p):
+            """return number of ancestor of Position p (0 if p is root)"""
+
+            if self.is_root(p):
+                return 0
+            else:
+                return 1+self.depth(self.parent(p))
+
+        def _height2(self,p):
+            if self.is_leaf(p):
+                return 0
+            else:
+                return 1+max(self._height2(c) for c in self.children(p))
+
+        def height(self,p=None):
+
+            if p is None:
+                p=self.root()
+            return self._height2(p)
 
 
