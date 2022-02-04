@@ -72,7 +72,7 @@ class _MapIterator:
         if self._curItem<len(self._array):
             item=self._array[self._curItem]
             self._curItem+=1
-            return item
+            return item._key, item._value
         else:
             raise StopIteration
 
@@ -81,4 +81,6 @@ if __name__=='__main__':
     m.add('musa','31')
     m.add('arif','34')
     m.add('krif','23')
-    print(m.valueOf('musa'))
+    
+    for key,val in m:
+        print(f'{key}:{val}')
